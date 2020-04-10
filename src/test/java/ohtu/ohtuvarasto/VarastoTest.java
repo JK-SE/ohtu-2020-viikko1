@@ -65,4 +65,58 @@ public class VarastoTest {
         assertEquals(4, varasto.paljonkoMahtuu(), vertailuTarkkuus);
     }
 
+    @Test
+    public void lisataanLiikaaTavaraa() {
+        varasto.lisaaVarastoon(11);
+        assertEquals(0, varasto.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void lisataanLiianVahanTavaraa() {
+        varasto.lisaaVarastoon(-1);
+        assertEquals(0,varasto.getSaldo(),vertailuTarkkuus);
+    }
+
+    @Test
+    public void otaVarastostaLiianVahan() {
+        varasto.otaVarastosta(-1);
+        assertEquals(0,varasto.getSaldo(),vertailuTarkkuus);
+    }
+
+    @Test
+    public void otaVarastostaLiikaa() {
+        varasto.lisaaVarastoon(2);
+        varasto.otaVarastosta(3);
+        assertEquals(0,varasto.getSaldo(),vertailuTarkkuus);
+    }
+
+    @Test
+    public void olionToString() {
+        varasto.lisaaVarastoon(3);
+        assertEquals("saldo = " + 3.0 + ", vielä tilaa " + 7.0, varasto.toString());
+    }
+    @Test
+    public void luoLiianPieniVarastoAlkusaldoOk() {
+        Varasto varasto = new Varasto(-1.0, 1);
+        assertEquals(0,varasto.getTilavuus(),vertailuTarkkuus);
+    }
+
+    @Test
+    public void luoVarastoOikeallaTilavuudelle() {
+        Varasto varasto = new Varasto(10.0, 1.0);
+        assertEquals(10,varasto.getTilavuus(),vertailuTarkkuus);
+    }
+
+    @Test
+    public void luoVarastoLiianPieniAlkuSaldo() {
+        Varasto varasto = new Varasto(10.0, -1.0);
+        assertEquals(0,varasto.getSaldo(),vertailuTarkkuus);
+    }
+
+    @Test
+    public void luoVarastoLiianPieniTilavuusEiSaldoa() {
+        Varasto varasto = new Varasto( -1 );
+        assertEquals(0,varasto.getTilavuus(),vertailuTarkkuus);
+    }
+
 }
