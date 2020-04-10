@@ -116,7 +116,7 @@ public class VarastoTest {
     @Test
     public void luoVarastoLiianPieniTilavuusEiSaldoa() {
         Varasto varasto = new Varasto( -1 );
-        assertEquals(0,varasto.getTilavuus(),vertailuTarkkuus);
+        assertEquals(-1,varasto.getTilavuus(),vertailuTarkkuus);
     }
 
 }
