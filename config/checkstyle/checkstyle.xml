@@ -24,6 +24,6 @@
 			<property name="max" value="3"/>
 		</module>
     </module>
- <property name = "severity" value = "warning"/>
+ <property name = "severity" value = "error"/>
 
 </module>
