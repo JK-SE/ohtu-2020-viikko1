@@ -62,7 +62,7 @@ public class Varasto {
     }
 
     public double otaVarastosta(double maara) {
-        if (maara < 0) // virhetilanteessa voidaan tehdä 
+        if (maara < 0) // virhetilanteessa voidaan tehdä ++
         {
             return 0.0;   // tällainen pikapoistuminenkin!
         }
@@ -80,4 +80,34 @@ public class Varasto {
     public String toString() {
         return ("saldo = " + saldo + ", vielä tilaa " + paljonkoMahtuu());
     }
+    
+    public void rikoTyylia() {
+		int z = 0;
+		for (int x=0;x<5;x++)
+		   if ( z == 2)
+				if ( z == 3)
+				  if (z == 5)
+					for (int w=0;w<5;w++)
+						{
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+							System.out.println("Kissa");
+						}
+				 else if ( z==7) {
+					System.out.println("Cat");
+				}
+				
+	}
 }
